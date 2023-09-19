@@ -1,9 +1,11 @@
 pipeline {
-    agent { docker { image 'python:3.11.5-alpine3.18' } }
+    agent {
+        docker { image 'node:18.17.1-alpine3.18' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'python --version'
+                sh 'node --version'
             }
         }
     }
